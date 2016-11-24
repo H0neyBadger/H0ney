@@ -10,7 +10,7 @@ $key = Get-Content "$userDesk/H0ney.key" -Encoding byte
 $AES = New-Object System.Security.Cryptography.AesManaged
 Write-Host "AES Key: $key"
 $AES.Key = $key
-$AES.Padding = [System.Security.Cryptography.PaddingMode]::Zeros
+$AES.Padding = [System.Security.Cryptography.PaddingMode]::PKCS7
 
 # ls list all files ending by .enc
 Get-ChildItem .\*.enc | ForEach-Object {

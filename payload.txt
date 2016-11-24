@@ -21,7 +21,7 @@ $AES.Key = $key
 $AES.iv = $iv
 echo "AES key: $key"
 echo "IV: $iv"
-$AES.Padding = [System.Security.Cryptography.PaddingMode]::Zeros
+$AES.Padding = [System.Security.Cryptography.PaddingMode]::PKCS7
 $Encryptor = $AES.CreateEncryptor()
 # foreach file in c: d: ....
 # TODO improve memory managment 
